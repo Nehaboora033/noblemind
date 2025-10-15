@@ -8,6 +8,15 @@
     --gradient-purple: linear-gradient(130.88deg, #A854E9 -9.14%, #4F91FC 283.16%);
     --gradient-lightpurple: linear-gradient(130.88deg, rgba(168, 84, 233, 0.12) -9.14%, rgba(79, 145, 252, 0.12) 283.16%);
 
+
+}
+
+.hover-shadow {
+    transition: all 200ms ease-in-out;
+}
+
+.hover-shadow:hover {
+    box-shadow: 0px 9px 50px 0px #0000001F;
 }
 
 .gradientlightpurple {
