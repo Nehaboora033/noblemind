@@ -1,5 +1,5 @@
 import { title } from "process"
-import { Agriculture, Education, Entertainment, Finance, Health, Marketing } from "./icons"
+import { Agriculture, Education, Entertainment, Facebook, Finance, Health, Insta, Linkedin, Marketing } from "./icons"
 
 export const Navlinks = [
     {
@@ -99,5 +99,17 @@ export const Choose_Data = [
     {
         title: 'Workplace Harmony',
         text: ' Create a nurturing and peaceful environment for our staff, fostering growth, well-being, and unity. We are more than a team; we are a family.',
+    },
+]
+
+export const Social_Icons = [
+    {
+        icon: Insta,
+    },
+    {
+        icon: Facebook,
+    },
+    {
+        icon: Linkedin,
     },
 ]
