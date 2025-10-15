@@ -5,10 +5,25 @@
     --color-purple: #9064EE;
     --color-white: #FDFCFC;
     --color-black: #000000;
+    --gradient-purple: linear-gradient(130.88deg, #A854E9 -9.14%, #4F91FC 283.16%);
+    --gradient-lightpurple: linear-gradient(130.88deg, rgba(168, 84, 233, 0.12) -9.14%, rgba(79, 145, 252, 0.12) 283.16%);
+
+}
+
+.gradientlightpurple {
+    background: var(--gradient-lightpurple);
 }
 
 .purple {
     background-color: var(--color-purple);
+}
+
+.gradientpurple {
+    background: var(--gradient-purple);
+}
+
+.textpurple {
+    color: var(--color-purple);
 }
 
 .white {
@@ -21,4 +36,21 @@
 
 .hover-purple:hover {
     color: var(--color-purple);
+}
+
+.gradient-border {
+    border-radius: 16px;
+    /* same as Tailwind rounded-2xl */
+    padding: 0.5px;
+    /* thickness of the border */
+    background: linear-gradient(130.88deg, #A854E9 -9.14%, #4F91FC 283.16%);
+}
+
+.gradient-border>.inner {
+    background: white;
+    /* background of content */
+    border-radius: 1rem;
+    /* same radius as outer */
+    padding: 1rem;
+    /* inner padding */
 }

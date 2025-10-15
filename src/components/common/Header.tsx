@@ -49,7 +49,7 @@ const Header = () => {
                 </nav>
 
                 {/* Button */}
-                <Button>Contact Us</Button>
+                <Button className='gradientpurple'>Contact Us</Button>
             </Container>
         </div>
     )

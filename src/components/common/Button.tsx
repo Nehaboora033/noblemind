@@ -1,16 +1,21 @@
-import React from 'react'
+import React from "react";
 
-interface ButtonProps {
+//  Extend built-in <button> element props
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
-const Button: React.FC<ButtonProps> = ({ className, children }) => {
+//  Define the component
+const Button: React.FC<ButtonProps> = ({ className = "", children, ...props }) => {
   return (
-    <button className={`${className} purple rounded-[61px] py-[16px] px-[42px] white cursor-pointer`}>
+    <button
+      {...props} // spread all other props like onClick, disabled, type, etc.
+      className={`rounded-[61px] py-[16px] px-[42px] white cursor-pointer ${className}`}
+    >
       {children}
     </button>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;
