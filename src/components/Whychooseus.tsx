@@ -2,13 +2,54 @@ import React from 'react'
 import Container from './common/Container'
 import SubHeading from './common/SubHeading'
 import Description from './common/Description'
-import { Choose_Data } from '@/utils/helper'
 import { Check } from '@/utils/icons'
 import BoxBlur from './common/BoxBlur'
 import Image from 'next/image'
 import image from '../assets/webp/chooseimg.webp'
 
-const Whychooseus = () => {
+interface Choosedetails {
+  title: string;
+  text: string;
+}
+
+
+export const Choose_Data: Choosedetails[] = [
+  {
+    title: 'Customer-Centric',
+    text: 'Prioritize and anticipate client needs, ensuring our technology solutions consistently deliver unparalleled value.',
+  },
+  {
+    title: 'Global Resonance',
+    text: 'Share insights and innovations that have a positive impact across borders and sectors.',
+  },
+  {
+    title: 'Ethical Leadership',
+    text: 'Maintain the highest standards in all practices, ensuring our solutions are responsible, safe, and transparent.',
+  },
+  {
+    title: 'Innovation',
+    text: 'Stay at the vanguard of technological transformation, redefining futures and driving excellence in all our offerings.',
+  },
+  {
+    title: 'Commitment to Vision 2030',
+    text: "Align with and champion Saudi Arabia's technological and societal aspirations.",
+  },
+  {
+    title: 'Collaboration',
+    text: 'Forge strategic partnerships across industries and institutions, emphasizing both global and local advancements.',
+  },
+  {
+    title: 'Social Responsibility',
+    text: 'Dedicate ourselves to uplifting communities, driving positive change, and promoting sustainable practices in both business and societal arenas.',
+  },
+  {
+    title: 'Workplace Harmony',
+    text: ' Create a nurturing and peaceful environment for our staff, fostering growth, well-being, and unity. We are more than a team; we are a family.',
+  },
+]
+
+
+const Whychooseus: React.FC = () => {
   return (
     <div className='py-[152px] overflow-hidden relative '>
       <Container className=''>
@@ -20,7 +61,7 @@ const Whychooseus = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id nisi euismod, porttitor quam sit amet, efficitur lectus. Mauris eget pulvinar ante. Fusce posuere, mi in pretium consequat, sem augue eleifend lorem, ut blandit libero neque vitae ex. Aenean interdum a arcu aliquam imperdiet.
           </Description>
         </div>
-        <Image src={image} alt='imagechoose' height={462} className='rounded-[16px]' />
+        <Image src={image} alt='imagechoose' height={462} priority className='rounded-[16px]' />
         <BoxBlur className='absolute top-0 right-0 z-0' />
         <BoxBlur className='absolute bottom-0 left-0 z-0' />
         <div className='grid grid-cols-2 gap-[24px] mt-[52px]'>
@@ -37,14 +78,10 @@ const Whychooseus = () => {
               <Description>
                 {item.text}
               </Description>
-              <div>
-
-              </div>
             </div>
           ))}
         </div>
       </Container>
-
     </div>
   )
 }

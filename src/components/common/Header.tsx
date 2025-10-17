@@ -5,9 +5,36 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Logo } from '@/utils/icons'
 import Container from './Container'
-import { Navlinks } from '@/utils/helper'
 
-const Header = () => {
+
+interface NavlinksDeatails {
+    name: string;
+    path: string;
+}
+
+
+export const Navlinks: NavlinksDeatails[] = [
+    {
+        name: 'Home',
+        path: '/',
+    },
+    {
+        name: 'About Us',
+        path: '/about',
+    },
+    {
+        name: 'Resources',
+        path: '/resourc',
+    },
+    {
+        name: 'Solutions',
+        path: '/solution',
+    },
+]
+
+
+
+const Header:React.FC = () => {
     const pathname = usePathname(); // ✅ get current URL path
 
     return (

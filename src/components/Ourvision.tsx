@@ -2,12 +2,28 @@ import React from 'react'
 import Container from './common/Container'
 import SubHeading from './common/SubHeading'
 import Description from './common/Description'
-import { Vision_Data } from '@/utils/helper'
 import { Check } from '@/utils/icons'
 import Image from 'next/image'
 import visionimage from '../assets/webp/visionimage.webp'
 
-const Ourvision = () => {
+
+interface VisionDetails {
+  text: string;
+}
+
+export const Vision_Data: VisionDetails[] = [
+  {
+    text: 'The future of how we live, work, and learn. We see a world where technology is not just a tool but a transformative force for good, reshaping every aspect of human existence.'
+  },
+  {
+    text: 'Technology is seen as a force for good, capable of driving positive change in society and improving the human experience.',
+  },
+  {
+    text: "Share insights and innovations that have a positive impact across borders and sectors.",
+  },
+]
+
+const Ourvision:React.FC = () => {
   return (
     <div className='py-[152px]'>
       <Container>
@@ -36,12 +52,11 @@ const Ourvision = () => {
 
           {/* Right Section */}
           <div className='max-w-[615px] w-full flex justify-center'>
-            <div className='w-[615px] h-[519px] relative'>
+            <div className=' relative'>
               <Image
                 src={visionimage}
                 alt='Vision image'
-                fill
-                className='object-contain rounded-2xl'
+                className='object-contain rounded-2xl w-[615px] h-[519px]'
               />
             </div>
           </div>

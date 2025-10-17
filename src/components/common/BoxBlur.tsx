@@ -6,7 +6,7 @@ interface BoxProps {
 
 const BoxBlur: React.FC<BoxProps> = ({ className="" }) => {
     return (
-        <div className={`${className} size-[220px] gradientpurple blur-[200px]`}>
+        <div className={`${className} size-[220px] gradientpurple blur-[180px]`}>
         </div>
     )
 }

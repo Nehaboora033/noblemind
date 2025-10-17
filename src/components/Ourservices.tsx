@@ -1,11 +1,54 @@
 import React from 'react'
 import Container from './common/Container'
 import SubHeading from './common/SubHeading'
-import { Services_Data } from '@/utils/helper'
 import Description from './common/Description'
 import BoxBlur from './common/BoxBlur'
+import { Agriculture, Education, Entertainment, Finance, Health, Marketing } from '@/utils/icons'
 
-const Ourservices = () => {
+
+interface ServicesDetails {
+  icon: React.ElementType;
+  title: string;
+  text: string;
+}
+
+export const Services_Data: ServicesDetails[] = [
+  {
+    icon: Health,
+    title: 'Healthcare',
+    text: 'we are on a mission to revolutionize the field of Healthcare through cutting-edge innovation.'
+  },
+  {
+    icon: Education,
+    title: 'Education',
+    text: 'Education is rooted in the idea that learning should be a lifelong journey',
+  },
+  {
+    icon: Finance,
+    title: 'Finance',
+    text: 'Recognizing that knowledge is the cornerstone of financial empowerment',
+  },
+  {
+    icon: Marketing,
+    title: 'Marketing',
+    text: 'where marketing campaigns are driven by data-driven insights, and where creativity knows no bounds.',
+  },
+  {
+    icon: Entertainment,
+    title: 'Entertainment',
+    text: "We believe that technology has the power to transport individuals to new worlds, unlock creativity",
+
+
+  },
+  {
+    icon: Agriculture,
+    title: 'Agriculture',
+    text: 'We are passionate about regenerative farming practices and sustainable agriculture',
+  },
+]
+
+
+const Ourservices:React.FC = () => {
   return (
     <div className='pt-[119.8px] pb-[122px] relative bg-[#EFEFEF] overflow-hidden'>
       <Container className='' >
@@ -31,8 +74,6 @@ const Ourservices = () => {
                 </div>
               </div>
             </div>
-
-
           ))}
         </div>
       </Container>

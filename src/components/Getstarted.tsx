@@ -4,7 +4,7 @@ import SubHeading from './common/SubHeading'
 import Description from './common/Description'
 import Button from './common/Button'
 
-const Getstarted = () => {
+const Getstarted: React.FC = () => {
   return (
     <div className='pt-[152px] pb-[148px]'>
       <Container>

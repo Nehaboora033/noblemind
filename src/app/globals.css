@@ -7,8 +7,13 @@
     --color-black: #000000;
     --gradient-purple: linear-gradient(130.88deg, #A854E9 -9.14%, #4F91FC 283.16%);
     --gradient-lightpurple: linear-gradient(130.88deg, rgba(168, 84, 233, 0.12) -9.14%, rgba(79, 145, 252, 0.12) 283.16%);
+    --gradient-box: linear-gradient(121.85deg, rgba(119, 176, 0, 0.02) -1.54%, rgba(0, 216, 99, 0.02) 98.96%);
+    --shadow-box: 0px 0px 100px 0px #2DCA3F1A;
 
+}
 
+.gradientbox {
+    background: var(--gradient-box);
 }
 
 .hover-shadow {
@@ -62,4 +67,27 @@
     /* same radius as outer */
     padding: 1rem;
     /* inner padding */
+}
+
+.footer-border::before {
+    content: "";
+    display: block;
+    height: 1px;
+    /* Thickness of the border */
+    width: 100%;
+    background: linear-gradient(130.88deg, #A854E9 -9.14%, #4F91FC 283.16%);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.line-gradient {
+    width: 1px;
+    height: 100%;
+    border: 1px solid;
+    border-image-source: linear-gradient(270deg,
+            rgba(253, 252, 252, 0) 0%,
+            #fdfcfc 51.55%,
+            rgba(253, 252, 252, 0) 100%);
+    border-image-slice: 1;
 }
