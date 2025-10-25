@@ -11,10 +11,16 @@ const page = () => {
   return (
     <div>
       <Hero />
-      <Ourmission />
-      <Ourvision />
+      <section id="how-it-works">
+        <Ourmission />
+      </section>
+      <section id="steps">
+        <Ourvision />
+      </section>
       <Ourservices />
-      <Whychooseus />
+      <section id="why-choose-us">
+        <Whychooseus />
+      </section>
       <Join />
       <Getstarted />
     </div>

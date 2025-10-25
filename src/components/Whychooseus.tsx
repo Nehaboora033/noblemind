@@ -7,6 +7,7 @@ import BoxBlur from './common/BoxBlur'
 import Image from 'next/image'
 import image from '../assets/webp/chooseimg.webp'
 
+
 interface Choosedetails {
   title: string;
   text: string;

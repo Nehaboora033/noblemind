@@ -1,3 +1,4 @@
+'use client';
 import React from 'react'
 import Container from './Container'
 import Image from 'next/image'
@@ -5,6 +6,7 @@ import logo from '../../assets/webp/Logofooter.webp'
 import Description from './Description'
 import Link from 'next/link'
 import { Facebook, Insta, Linkedin, Message, Phone } from '@/utils/icons'
+import { useRouter } from 'next/navigation'
 
 
 
@@ -33,7 +35,7 @@ export const Socail_Icons: SocialIcon[] = [
 type FooterLinkItem = {
   name: string;
   path: string;
-  icon?: React.ElementType; //  optional icon property
+  icon?: React.ElementType;
 };
 
 // 2️⃣ Define the type for a footer section
@@ -73,6 +75,20 @@ export const Footer_Links: FooterSection[] = [
 
 const Footer: React.FC = () => {
   const currentYear = new Date();
+  const router = useRouter();
+
+  const handleScroll = (sectionId: string) => {
+    // If you're already on the homepage
+    if (router.pathname === '/') {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // If you're on another page, go to home and then scroll
+      router.push(`/#${sectionId}`);
+    }
+  };
 
   return (
     <div className='bg-black pt-[91px]'>
@@ -105,10 +121,26 @@ const Footer: React.FC = () => {
                   </li>
                   {item.link.map((linkitem, i) => {
                     const Icon = linkitem.icon;
+                    const handleClick = (e: React.MouseEvent) => {
+                      // prevent default behavior when using scroll
+                      if (linkitem.name === 'How it Works') {
+                        e.preventDefault();
+                        handleScroll('how-it-works');
+                      } else if (linkitem.name === 'Why Choose Us') {
+                        e.preventDefault();
+                        handleScroll('why-choose-us');
+                      } else if (linkitem.name === 'Steps') {
+                        e.preventDefault();
+                        handleScroll('steps');
+                      }
+                    };
+
                     return (
                       <li key={i} className='flex gap-4 items-center'>
                         {Icon && <Icon />}
-                        <Link href={linkitem.path} className='text-[#CCCCCC] hover:text-white transition-colors ease-in-out duration-150  mb-3 font-normal text-[16px] leading-[150%]'>
+                        <Link href={linkitem.path}
+                          onClick={handleClick}
+                          className='text-[#CCCCCC] hover:text-white transition-colors ease-in-out duration-150  mb-3 font-normal text-[16px] leading-[150%]'>
                           {linkitem.name}
                         </Link>
                       </li>

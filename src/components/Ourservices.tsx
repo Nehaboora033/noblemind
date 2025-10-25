@@ -51,7 +51,7 @@ export const Services_Data: ServicesDetails[] = [
 const Ourservices:React.FC = () => {
   return (
     <div className='pt-[119.8px] pb-[122px] relative bg-[#EFEFEF] overflow-hidden'>
-      <Container className='' >
+      <Container >
         <SubHeading className='flex justify-center mb-[52px]'>
           Our <span className='textpurple'>Services</span>
         </SubHeading>
