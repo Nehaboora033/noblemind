@@ -47,7 +47,7 @@ const Ourmission: React.FC = () => {
                     src={item.image}
                     alt="logo"
                     key={index}
-                   
+
                     className="w-[276px] h-[276px] rounded-[8px] object-cover flex z-[1]"
                   />
                 ))}

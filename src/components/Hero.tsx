@@ -7,12 +7,14 @@ import BoxBlur from './common/BoxBlur'
 import Image from 'next/image'
 import image from '../assets/webp/chooseimg.webp'
 import ring from '../assets/webp/ring.webp'
+import BackToTop from './common/BackToTop'
 
 
 const Hero: React.FC = () => {
   return (
     <div className='pt-[44px] pb-[47px] relative'>
       <Container>
+        <BackToTop />
         <Heading className='mx-auto'>
           Elevate Your Solutions with <span className='textpurple'>Noble Mind IT </span>
         </Heading>

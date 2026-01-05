@@ -6,7 +6,7 @@ import logo from '../../assets/webp/Logofooter.webp'
 import Description from './Description'
 import Link from 'next/link'
 import { Facebook, Insta, Linkedin, Message, Phone } from '@/utils/icons'
-import { useRouter } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 
 
 
@@ -76,10 +76,11 @@ export const Footer_Links: FooterSection[] = [
 const Footer: React.FC = () => {
   const currentYear = new Date();
   const router = useRouter();
+  const pathname = usePathname();
 
   const handleScroll = (sectionId: string) => {
     // If you're already on the homepage
-    if (router.pathname === '/') {
+    if (pathname === '/') {
       const section = document.getElementById(sectionId);
       if (section) {
         section.scrollIntoView({ behavior: 'smooth' });
@@ -116,7 +117,7 @@ const Footer: React.FC = () => {
             <div className='flex justify-between'>
               {Footer_Links.map((item, index) => (
                 <ul key={index} className=''>
-                  <li className='white font-bold text-[16px] mb-3 leading-[150%]'>
+                  <li className='white font-bold text-[16px] mb-3 leading-[150%] '>
                     {item.title}
                   </li>
                   {item.link.map((linkitem, i) => {
@@ -136,11 +137,11 @@ const Footer: React.FC = () => {
                     };
 
                     return (
-                      <li key={i} className='flex gap-4 items-center'>
+                      <li key={i} className='flex gap-4 items-center mb-3'>
                         {Icon && <Icon />}
                         <Link href={linkitem.path}
                           onClick={handleClick}
-                          className='text-[#CCCCCC] hover:text-white transition-colors ease-in-out duration-150  mb-3 font-normal text-[16px] leading-[150%]'>
+                          className='text-[#CCCCCC] hover:text-white transition-colors ease-in-out duration-150   font-normal text-[16px] leading-[150%]'>
                           {linkitem.name}
                         </Link>
                       </li>
